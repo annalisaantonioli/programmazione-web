@@ -1,4 +1,4 @@
-# 📁 Starte del progetto - Fase 1 (HTML, CSS, JavaScript)
+# 📁 Starter del progetto - Fase 1 (HTML, CSS, JavaScript)
 
 Questo progetto è la **prima fase** del percorso di sviluppo: un sito web realizzato in **HTML, CSS e JavaScript**, responsive e interattivo.
 
