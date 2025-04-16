@@ -2,7 +2,9 @@
 
 Safebags è un'applicazione che ti permette di assicurare i tuoi bagagli online, calcolando il costo dell'assicurazione in base al valore dei tuoi beni, il numero di bagagli, la durata del viaggio e il numero di scali.
 
-## homepage
+## Struttura
+
+### homepage
 
 La homepage presenta:
 
@@ -13,7 +15,7 @@ La homepage presenta:
 5. Un form per inviare un messaggio;
 6. Un footer con informazioni legali e link ai social;
 
-## calcolo del preventivo
+### calcolo del preventivo
 
 La pagina di calcolo del preventivo presenta:
 
@@ -21,9 +23,18 @@ La pagina di calcolo del preventivo presenta:
 2. Pulsante per calcolare il preventivo;
 3. Un'area per visualizzare il preventivo calcolato: mostrata tramite manipolazione del DOM via JS.
 
-## faq
+### faq
 
 La pagina FAQ presenta:
 
 1. Una sezione introduttiva con un breve testo e un'immagine;
 2. Un accordion con le domande e le risposte
+
+## Funzionalità
+
+1. Calcolo del preventivo tramite JS;
+2. Animazioni CSS per le card della sezione "Come funziona";
+3. Animazioni CSS per l'accordion della pagina FAQ;
+4. Validazione del form di contatto e validazione del form per il calcolatore di polizza;
+5. Gestione interazioni da mobile: toggle del menu di navigazione;
+6. Salvataggio dati via localStorage o con fetch API
