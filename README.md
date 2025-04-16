@@ -12,9 +12,19 @@ Creare un sito statico ma funzionale, con una struttura semantica chiara, uno st
 
 - `index.html`: homepage del sito
 - `pages/`: pagine aggiuntive (es. `about.html`, `contact.html`)
-- `css/`: file CSS come `style.css` e `reset.css`
-- `js/`: file JavaScript come `main.js`
-- `assets/`: immagini e font
+- `assets/`: i
+  - `css/`: file CSS
+    - `style.css`: foglio di stile principale
+  - `js/`: file JavaScript
+    - `script.js`: script principale
+  - `img/`: immagini utilizzate nel progetto
+  - `fonts/`: font utilizzati nel progetto
+- `scss/`: file SASS (opzionale, se si utilizza SASS)
+- `icons/`: icone utilizzate nel progetto
+- `favicon.ico`: icona del sito
+- `package.json`: file di configurazione del progetto (opzionale, se si utilizza npm)
+- `package-lock.json`: file di lock del progetto (opzionale, se si utilizza npm)
+- `gitignore`: file per escludere file e cartelle dal controllo di versione
 - `README.md`: documentazione del progetto
 
 ## :computer: Inizializzare server locale
