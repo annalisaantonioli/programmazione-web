@@ -12,7 +12,7 @@ Creare un sito statico ma funzionale, con una struttura semantica chiara, uno st
 
 - `index.html`: homepage del sito
 - `pages/`: pagine aggiuntive (es. `about.html`, `contact.html`)
-- `assets/`: i
+- `assets/`:
   - `css/`: file CSS
     - `style.css`: foglio di stile principale
   - `js/`: file JavaScript

@@ -11,7 +11,7 @@ La homepage presenta:
 1. L'header con logo e menu di navigazione;
 2. Una hero con un breve testo introduttivo e una CTA (pulsante, Call to Action) "Calcola il tuo preventivo adesso" che rimanda ad una pagina per calcolare il preventivo;
 3. Una sezione "Come funziona" che, con card animate, spiega il funzionamento dell'app;
-4. Un'altra sezione con CTA alla pagina di calcolo e una CTA che manda alle FAQ;
+4. Un'altra sezione con CTA alla sezione contatti e una CTA che manda alle FAQ;
 5. Un form per inviare un messaggio;
 6. Un footer con informazioni legali e link ai social;
 
