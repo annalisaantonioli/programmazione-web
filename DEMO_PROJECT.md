@@ -1,4 +1,4 @@
-# SAFEBAGS - Parti tranquillo, assiucra i tuoi bagagli
+# SAFEBAGS - Parti tranquillo, assucura i tuoi bagagli
 
 Safebags è un'applicazione che ti permette di assicurare i tuoi bagagli online, calcolando il costo dell'assicurazione in base al valore dei tuoi beni, il numero di bagagli, la durata del viaggio e il numero di scali.
 
