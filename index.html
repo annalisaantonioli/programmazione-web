@@ -7,22 +7,22 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>SAFEBAGS - Demo project</title>
   <!-- foglio CSS per normalizzare gli stili di default -->
-  <link href="https://cdn.jsdelivr.net/npm/modern-normalize@3.0.1/modern-normalize.min.css" rel="stylesheet"
-    type="text/css">
+  <link href="https://cdn.jsdelivr.net/npm/modern-normalize@3.0.1/modern-normalize.min.css" rel="stylesheet">
 
-   <link href="/assets/css/main.css" rel="stylesheet" type="text/css">
+  <link href="/assets/css/main.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
 
   <!-- Header con navigazione -->
-  <header>
-    <a href="/" title="Safebags homepage"><img src="/assets/images/logo.svg" alt=""></a>
+  <header class="container absolute">
+    <a class="logo" href="/" title="Safebags homepage"><img src="/assets/images/logo.svg" alt=""></a>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
-        <li><a href="pages/about.html">Calcola la tua polizza</a></li>
-        <li><a href="pages/faq.html">FAQ</a></li>
+        <li><a href="about.html">Calcola la tua polizza</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="/#contatti">contatti</a></li>
       </ul>
     </nav>
   </header>
@@ -30,12 +30,17 @@
   <!-- Contenuto principale -->
   <main>
     <section class="hero">
-      <h1>SAFEBAGS - Viaggia tranquillo</h1>
-      <p>Sed at risus vel nulla consequat fermentum. Donec et orci mauris. Nullam tempor velit id mi luctus, a
-        scelerisque libero accumsan. In hac habitasse platea dictumst. Cras ac nunc nec massa tristique fringilla.</p>
-      <a href="calcola-polizza.html">Calocla il tuo preventivo</a>
+      <div class="container">
+        <div>
+          <h1 class="text-primary">SAFEBAGS. <span class="text-light">Viaggia tranquillo</span></h1>
+          <p>Sed at risus vel nulla consequat fermentum. Donec et orci mauris. Nullam tempor velit id mi luctus, a
+            scelerisque libero accumsan. In hac habitasse platea dictumst. Cras ac nunc nec massa tristique fringilla.
+          </p>
+          <a class="button" href="calcola-polizza.html">Calcola il tuo preventivo</a>
+        </div>
+      </div>
     </section>
-    <section class="grid">
+    <section class="cards container">
       <ol>
         <li>
           <h3>Coompila il form</h3>
