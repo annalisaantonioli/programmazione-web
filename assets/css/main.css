@@ -1,8 +1,15 @@
+html {
+  font-size: 16px;
+}
 header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 2em 0;
+}
+
+nav {
+  padding: 4em;
 }
 
 header nav ul {
@@ -21,4 +28,15 @@ header nav ul {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
+}
+
+.hero {
+  height: 100vh;
+  background-image: url(/assets/images/logo.png);
+  background-repeat: no-repeat;
+  background-position: center right;
+}
+
+.hero div {
+  width: 50%;
 }
