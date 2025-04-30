@@ -6,6 +6,9 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 2em 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 nav {
@@ -20,7 +23,7 @@ header nav ul {
 }
 
 .logo img {
-  width: 200px;
+  width: 140px;
 }
 
 /* Layout classes */
@@ -32,9 +35,11 @@ header nav ul {
 
 .hero {
   height: 100vh;
-  background-image: url(/assets/images/logo.png);
+  background-image: url(https://placecats.com/neo/300/200);
   background-repeat: no-repeat;
   background-position: center right;
+  display: flex;
+  align-items: center;
 }
 
 .hero div {
