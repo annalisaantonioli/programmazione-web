@@ -33,6 +33,19 @@ header nav ul {
   margin: 0 auto;
 }
 
+.flex-container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.container {
+  background-color: white;
+}
+
+.flex-container > div {
+  flex: 1;
+}
+
 .hero {
   height: 100vh;
   background-image: url(https://placecats.com/neo/300/200);
@@ -44,4 +57,31 @@ header nav ul {
 
 .hero div {
   width: 50%;
+}
+
+.grid ol {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+}
+
+.faq {
+  flex-direction: row-reverse;
+}
+.faq img {
+  width: 100%;
+  height: auto;
+}
+
+.faq div:first-child {
+  padding: 0 3rem;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: 1fr repeat(2, 2fr);
 }
