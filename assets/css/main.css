@@ -1,0 +1,24 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2em 0;
+}
+
+header nav ul {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  list-style-type: none;
+}
+
+.logo img {
+  width: 200px;
+}
+
+/* Layout classes */
+.container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+}
