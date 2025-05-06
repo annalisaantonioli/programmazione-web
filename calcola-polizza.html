@@ -12,7 +12,7 @@
     href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
   <link href="/assets/css/main.css" rel="stylesheet" type="text/css">
   <link href="/assets/css/typography.css" rel="stylesheet" type="text/css">
-  <script src="/assets/js/example.js" defer></script>
+
   <style>
     #backdrop {
       position: fixed;
@@ -70,15 +70,55 @@
       <div class="container">
         <div>
           <h1 class="text-primary">Calcola la tua polizza</h1>
-          <p class="text-medium ">Proteggi i tuoi bagagli durante il viaggio con una <a href="/copertura-personalizzata.html"
-              >copertura personalizzata</a> in base alle tue reali
+          <p class="text-medium ">Proteggi i tuoi bagagli durante il viaggio con una <a href="#" data-text="Lorem ipsum dolor sit">copertura personalizzata</a> in base
+            alle tue reali
             esigenze. Inserisci il numero di valigie, il peso totale e il numero di scali previsti: il nostro sistema ti
             fornirà immediatamente un preventivo trasparente, senza sorprese. Viaggia sereno, i tuoi effetti personali
             sono al sicuro.
-
           </p>
         </div>
       </div>
+    </section>
+    <section id="calculator" class="container no-padding">
+      <form>
+        <div class="flex-container">
+          <div class="input-wrapper">
+            <label for="name">Nome*</label>
+            <input id="name" name="name" type="text" required>
+            <span class="validation-message"></span>
+          </div>
+          <div class="input-wrapper">
+            <label for="email">Email*</label>
+            <input id="email" name="email" type="email" required>
+            <span class="validation-message"></span>
+          </div>
+          <div class="input-wrapper">
+            <label for="phone">Numero di telefono</label>
+            <input id="phone" name="phone" type="text">
+            <span class="validation-message"></span>
+          </div>
+        </div>
+        <div class="flex-container">
+          <div class="input-wrapper">
+            <label for="bag_number">Numero di bagagli*</label>
+            <input id="bag_number" name="bag_number" type="number" required>
+            <span class="validation-message"></span>
+          </div>
+          <div class="input-wrapper">
+            <label for="weight">Peso totale*</label>
+            <input id="weight" name="weight" type="number">
+            <span class="validation-message"></span>
+          </div>
+          <div class="input-wrapper">
+            <label for="stops">Numero di scali*</label>
+            <input id="stops" name="stops" type="number">
+            <span class="validation-message"></span>
+          </div>
+        </div>
+        <p><input id="privacy" type="checkbox" required> Ho letto e accetto i termini e le condizioni</p>
+        <div><input id="submitCalculation" type="submit" value="Calcola "></div>
+      </form>
+
     </section>
 
 
@@ -103,9 +143,12 @@
       </div>
       <p class="text-small">&copy; 2025 Corso Programmazione Web - Progetto demo</p>
     </footer>
+<div id="backdrop"></div>
   </main>
 
-  <div id="backdrop"></div>
+
+  <script src="assets/js/vendors.js"></script>
+  <script src="assets/js/main.js"></script>
 </body>
 
 </html>

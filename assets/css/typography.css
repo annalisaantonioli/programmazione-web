@@ -36,6 +36,7 @@ a:hover {
   opacity: 0.5;
 }
 
-nav li a {
+nav li a,
+.social a {
   text-decoration: none;
 }

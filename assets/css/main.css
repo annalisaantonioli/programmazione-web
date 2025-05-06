@@ -278,6 +278,11 @@ form textarea {
   padding: 7px;
 }
 
+form input[type='checkbox'] {
+  width: auto;
+  margin-right: 10px;
+}
+
 form input[type='submit'] {
   color: #f6f6f6;
   background-color: var(--primary-color);
@@ -333,4 +338,64 @@ footer p {
 
 footer > div > div:last-of-type {
   justify-self: end;
+}
+
+#calculator {
+  background-color: var(--light-color);
+  border-radius: 32px;
+}
+
+#calculator label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+#calculator form > div,
+#calculator form > p {
+  width: 100%;
+}
+
+#calculator form > div:last-child {
+  text-align: right;
+}
+
+#calculator form input:not([type='submit']) {
+  width: 100%;
+}
+#calculator form input[type='checkbox'] {
+  width: auto;
+}
+
+.result-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  width: 80vw;
+  height: 80vh;
+  border: 2px solid var(--primary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+}
+
+#overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+#overlay.visible {
+  display: flex;
+}
+
+#output {
+  background-color: white;
+  text-align: center;
+  font-size: 2rem;
+  padding: 20px;
 }
