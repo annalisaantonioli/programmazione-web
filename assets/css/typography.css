@@ -30,12 +30,9 @@ a:focus,
 a {
   transition: opacity 0.4s linear;
   color: var(--base-color);
+  text-decoration: none;
 }
 
 a:hover {
   opacity: 0.5;
-}
-
-nav li a {
-  text-decoration: none;
 }
