@@ -12,41 +12,9 @@
     href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
   <link href="/assets/css/main.css" rel="stylesheet" type="text/css">
   <link href="/assets/css/typography.css" rel="stylesheet" type="text/css">
-  <script src="/assets/js/example.js" defer></script>
-  <style>
-    #backdrop {
-      position: fixed;
-      z-index: 10;
-      width: 100%;
-      height: 100vh;
-      left: 0;
-      top: 0;
-      background: rgba(0, 0, 0, 0.75);
-      display: none;
-      pointer-events: none;
-    }
+  <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/calculator.js" defer></script>
 
-    #backdrop.visible {
-      display: block;
-      pointer-events: all;
-    }
-
-    .modal {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      width: 500px;
-      transform: translate(-50%, -50%);
-      z-index: 100;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-      animation: float-in 0.3s ease-out forwards;
-      display: flex;
-      padding: 20px;
-      flex-direction: column;
-    }
-  </style>
 </head>
 
 <body>
@@ -70,8 +38,8 @@
       <div class="container">
         <div>
           <h1 class="text-primary">Calcola la tua polizza</h1>
-          <p class="text-medium ">Proteggi i tuoi bagagli durante il viaggio con una <a href="/copertura-personalizzata.html"
-              >copertura personalizzata</a> in base alle tue reali
+          <p class="text-medium ">Proteggi i tuoi bagagli durante il viaggio con una <a
+              href="/copertura-personalizzata.html">copertura personalizzata</a> in base alle tue reali
             esigenze. Inserisci il numero di valigie, il peso totale e il numero di scali previsti: il nostro sistema ti
             fornirà immediatamente un preventivo trasparente, senza sorprese. Viaggia sereno, i tuoi effetti personali
             sono al sicuro.
@@ -81,7 +49,33 @@
       </div>
     </section>
 
+    <section class="container bg-light form-container ">
+      <form id="policyForm" novalidate>
+        <div class="form-group">
+          <label for="bags">Numero di valigie*</label>
+          <input type="number" id="bags" name="bags" min="1" required />
+        </div>
 
+        <div class="form-group">
+          <label for="weight">Peso totale (kg)*</label>
+          <input type="number" id="weight" name="weight" min="1" required />
+        </div>
+
+        <div class="form-group">
+          <label for="stops">Numero di scali*</label>
+          <input type="number" id="stops" name="stops" min="0" required />
+        </div>
+
+        <div class="form-group checkbox-group">
+          <input type="checkbox" id="extraCoverage" name="extraCoverage" />
+          <label for="extraCoverage">Aggiungi copertura extra (+20%)</label>
+        </div>
+
+        <button id="submitButton" type="submit" class="button">Calcola preventivo</button>
+      </form>
+
+      <div id="result" class="result" aria-live="polite"></div>
+    </section>
     <footer class="bg-grey">
       <div class="container">
         <div>
