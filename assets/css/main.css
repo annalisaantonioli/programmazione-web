@@ -284,17 +284,7 @@ form input[type='submit'] {
   width: 150px;
 }
 
-input.error {
-  border: 2px solid red;
-  background-color: #f8d7da;
-}
-
-textarea.error {
-  border: 2px solid red;
-  background-color: #f8d7da;
-}
-
-select.error {
+.error {
   border: 2px solid red;
   background-color: #f8d7da;
 }
@@ -393,4 +383,56 @@ footer > div > div:last-of-type {
   visibility: visible;
   display: block;
   opacity: 1;
+}
+
+.accordion {
+  max-width: 600px;
+  margin: 2rem auto;
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+.accordion-item {
+  border-bottom: 1px solid var(--light-color);
+}
+
+.accordion-header {
+  width: 100%;
+  text-align: left;
+  padding: 1rem;
+  font-weight: bold;
+  font-size: 1rem;
+  color: var(--accent-color);
+  background: var(--primary-color);
+  border: none;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s color 0.3s;
+}
+
+.accordion-item.active i {
+  transform: scale(-1);
+}
+
+.accordion-header:hover {
+  background: var(--accent-color);
+  color: var(--primary-color);
+}
+
+.accordion-body {
+  padding: 0 1rem;
+  max-height: 0;
+  overflow: hidden;
+  background: #fff;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.accordion-item.active .accordion-body {
+  padding: 1rem;
+  max-height: 300px; /* valore sufficiente per il contenuto */
 }

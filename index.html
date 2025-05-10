@@ -8,14 +8,12 @@
   <title>SAFEBAGS - Demo project</title>
   <!-- foglio CSS per normalizzare gli stili di default -->
   <link href="https://cdn.jsdelivr.net/npm/modern-normalize@3.0.1/modern-normalize.min.css" rel="stylesheet">
- <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
-    />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
   <link href="/assets/css/main.css" rel="stylesheet" type="text/css">
   <link href="/assets/css/typography.css" rel="stylesheet" type="text/css">
-    <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/main.js" defer></script>
+  <script src="/assets/js/contact.js" defer></script>
 </head>
 
 <body>
@@ -86,15 +84,16 @@
       <div class="container grid-container">
         <div>
           <h3>Oppure contattaci</h3>
-          <form>
+          <form id="contactForm" novalidate>
             <label>Nome*</label>
-            <input type="text">
+            <input type="text" required>
             <label>E-mail*</label>
-            <input type="email">
+            <input type="email" required>
             <label>Il tuo messaggio</label>
             <textarea></textarea>
             <input type="submit" value="Invia">
           </form>
+          <div id="formMessage"></div>
         </div>
 
         <div>
