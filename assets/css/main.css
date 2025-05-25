@@ -10,6 +10,7 @@
 html {
   font-size: 16px;
   line-height: 1.1;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -56,12 +57,6 @@ section {
   margin: auto;
 }
 
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-}
-
 .flex-container > div {
   flex: 1;
 }
@@ -81,17 +76,6 @@ section {
 
 .flex-container.horizontal-centered {
   justify-content: center;
-}
-
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: minmax(
-    50vh,
-    auto
-  ); /* questo da l'altezza minima a 100px e cresce a seconda del contenuto */
-  align-items: center;
-  min-height: 50vh;
 }
 
 .relative {
@@ -142,20 +126,38 @@ header {
 
 header > nav {
   height: 100%;
+  position: fixed;
+  z-index: 999;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(100%);
+  background-color: var(--accent-light-color);
+  transition: transform 0.24s linear;
+}
+header > nav.is-open {
+  transform: translateX(0);
 }
 
 header > nav > ul {
   text-align: center;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  gap: 2rem;
 }
 
 header > nav > ul li {
   text-align: center;
   display: inline-block;
   margin: 0 20px;
-  font-size: 18px;
+  font-size: 1.125rem;
   text-transform: uppercase;
   position: relative;
 }
@@ -175,18 +177,20 @@ header > nav > ul li::before {
   background-color: var(--accent-color);
   transform: scaleX(0);
   transform-origin: left;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.4s linear;
 }
 
 header > nav > ul li a {
   font-weight: 500;
   color: var(--primary-color);
 }
-header > nav > ul li:hover a {
+header > nav > ul li:hover a,
+header > nav > ul li.current a {
   opacity: 1;
 }
 
-header > nav > ul li:hover::before {
+header > nav > ul li:hover::before,
+header > nav > ul li.current::before {
   transform: scaleX(1);
 }
 
@@ -196,7 +200,15 @@ header.absolute {
   transform: translateX(-50%);
   width: 100%;
 }
-
+.navCloser {
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+}
+.navOpener,
+.navCloser {
+  cursor: pointer;
+}
 .logo {
   flex-shrink: 0;
   flex-grow: 0;
@@ -208,39 +220,33 @@ header.absolute {
 /** HERO **/
 .hero {
   width: 100%;
-  height: 100vh;
-  margin-top: 0;
 
+  margin-top: 0;
   z-index: 0;
   display: flex;
   align-items: center;
-  background: var(--accent-light-color) url(/assets/images/hero.jpg) no-repeat
-    fixed bottom right;
-  background-size: 50%;
+  background-image: url(/assets/images/hero.jpg);
+  background-color: var(--accent-light-color);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center bottom;
 }
 
 .hero .container > div {
-  width: 50%;
+  padding-bottom: 50vh;
 }
 
 .hero p {
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 
 /** CARDS **/
-.cards ol {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  column-gap: 24px;
-  margin: 0;
-  padding: 0;
-  list-style-position: inside;
-}
 
 .cards ol li {
   padding: 20px;
   border-radius: 24px;
   background-color: #ebf1ff;
+  margin: 2rem 0;
 }
 
 .cards ol li::marker {
@@ -274,7 +280,7 @@ form textarea:focus {
 
 form input:not([type='submit']),
 form textarea {
-  width: 70%;
+  width: 100%;
   padding: 7px;
 }
 
@@ -290,21 +296,10 @@ form input[type='submit'] {
 }
 
 /* sections */
-#contatti {
-  background-image: url(/assets/images/20286028_6212131.svg);
-  background-size: 50%;
-  background-repeat: no-repeat;
-  background-position: top right;
-  height: 100%;
-}
+
 footer {
   padding-top: 3rem;
   padding-bottom: 1.5rem;
-}
-footer > div {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
 }
 
 footer ul {
@@ -336,19 +331,18 @@ footer p {
   color: var(--primary-color);
 }
 
-footer > div > div:last-of-type {
-  justify-self: end;
+footer > div > div {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+footer ul {
+  margin: 0;
+  padding: 0;
 }
 
 .form-container {
   margin-bottom: 4rem;
-  border-radius: 24px;
-}
-
-.form-container form {
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 24px;
 }
 
 .form-container form .form-group {
@@ -404,7 +398,7 @@ footer > div > div:last-of-type {
   padding: 1rem;
   font-weight: bold;
   font-size: 1rem;
-  color: var(--accent-color);
+  color: #fff;
   background: var(--primary-color);
   border: none;
   cursor: pointer;
@@ -435,4 +429,107 @@ footer > div > div:last-of-type {
 .accordion-item.active .accordion-body {
   padding: 1rem;
   max-height: 300px; /* valore sufficiente per il contenuto */
+}
+
+@media screen and (min-width: 1024px) {
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: minmax(
+      50vh,
+      auto
+    ); /* questo da l'altezza minima a 100px e cresce a seconda del contenuto */
+    align-items: center;
+    min-height: 50vh;
+  }
+
+  form input:not([type='submit']),
+  form textarea {
+    width: 70%;
+  }
+
+  header > nav {
+    height: auto;
+    width: auto;
+    position: relative;
+    display: block;
+    inset: unset;
+    transform: none;
+    background: none;
+  }
+  header > nav > ul {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 0;
+  }
+
+  .is-home header {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+  }
+
+  .navOpener,
+  .navCloser {
+    display: none;
+  }
+
+  .hero {
+    height: 100vh;
+    background-attachment: fixed;
+    background-size: 50%;
+    background-position: bottom right;
+  }
+
+  .hero .container > div {
+    width: 50%;
+    padding-bottom: 0;
+  }
+
+  .cards ol {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 24px;
+    margin: 0;
+    padding: 0;
+    list-style-position: inside;
+  }
+
+  #contatti {
+    background-image: url(/assets/images/20286028_6212131.svg);
+    background-size: 50%;
+    background-repeat: no-repeat;
+    background-position: top right;
+    height: 100%;
+  }
+
+  footer > div {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  footer > div > div {
+    text-align: left;
+  }
+  footer > div > div:last-of-type {
+    justify-self: end;
+  }
+
+  .form-container {
+    border-radius: 24px;
+  }
+
+  .form-container form {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
 }
